@@ -1602,9 +1602,8 @@ window.addEventListener('load',()=>{
   const loader = document.getElementById('loader');
   const timerEl = document.getElementById('loader-timer');
 
-  // force stored unlock time to 1 minute from now (overwrite any previous value)
-  const msOffset = 35 * 60 * 1000; // 1 minute
-  const target = new Date(Date.now() + msOffset);
+  // Set target date to June 11, 2026 at midnight
+  const target = new Date(2026, 5, 11, 0, 0, 0); // Month is 0-indexed, so 5 = June
   const targetISO = target.toISOString();
   localStorage.setItem(key, targetISO);
   const unlock = new Date(targetISO);
